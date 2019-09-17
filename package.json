@@ -1,0 +1,43 @@
+{
+  "name": "typesafe-uuid",
+  "version": "1.0.0",
+  "description": "Library to enable definition of different types of objects indexed by a uuid",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "tslint --project tsconfig.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diversemix/typesafe-uuid.git"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "typesafe",
+    "uuid",
+    "guid",
+    "database",
+    "ids"
+  ],
+  "author": "diversemix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diversemix/typesafe-uuid/issues"
+  },
+  "homepage": "https://github.com/diversemix/typesafe-uuid#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/uuid": "^3.4.5",
+    "fp-ts": "^2.0.5",
+    "io-ts": "^2.0.1"
+  }
+}

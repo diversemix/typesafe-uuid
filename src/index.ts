@@ -1,0 +1,1 @@
+export { uuidType } from './uuidType';
