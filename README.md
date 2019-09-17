@@ -9,7 +9,7 @@ npm install diversemix/typesafe-uuid
 ```
 or
 ```
-yarn install diversemix/typesafe-uuid
+yarn add diversemix/typesafe-uuid
 ```
 
 
