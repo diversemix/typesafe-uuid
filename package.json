@@ -1,6 +1,6 @@
 {
   "name": "typesafe-uuid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to enable definition of different types of objects indexed by a uuid",
   "main": "dist/index.js",
   "scripts": {
