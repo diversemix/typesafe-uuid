@@ -5,37 +5,39 @@ export const UUIDRefinement = refinement(string, (str: string) => uuidCheck.test
 
 // tslint:disable:max-classes-per-file
 export type Uuid = TypeOf<typeof UUIDRefinement>;
-
+type InternalThing = new (...args: any) => any;
 // All this is testing trying to make the UUID types more specific
 // https://github.com/Microsoft/TypeScript/issues/202#issuecomment-498201335
 export function branded<T, Brand>() {
   return class BrandedType {
+      constructor() {}
       value: BrandedType;
       '__ kind': Brand;
-      static toBranded<Cls extends typeof BrandedType>(this: Cls, t: T) {
+      static toBranded<Cls extends InternalThing>(this: Cls, t: T) {
         return t as unknown as InstanceType<Cls>;
       }
-      static fromBranded<Cls extends typeof BrandedType>(this: Cls, b: InstanceType<Cls>) {
+      static fromBranded<Cls extends InternalThing>(this: Cls, b: InstanceType<Cls>) {
         return b as unknown as T;
       }
-      static Type: BrandedType;
+      static Type: InternalThing;
   };
 }
 
 // Modified for UUID
 export function uuidType<Brand>() {
   return class UuidType {
+      constructor() {}
       value: UuidType;
       '__ kind': Brand;
-      static fromUuid<Cls extends typeof UuidType>(this: Cls, t: Uuid) {
+      static fromUuid<Cls extends InternalThing>(this: Cls, t: Uuid) {
         if (!uuidCheck.test(t)) {
           throw new TypeError(`fromUuid was passed a non-uuid: ${t}`);
         }
         return t as unknown as InstanceType<Cls>;
       }
-      static toUuid<Cls extends typeof UuidType>(this: Cls, b: InstanceType<Cls>) {
+      static toUuid<Cls extends InternalThing>(this: Cls, b: InstanceType<Cls>) {
         return b as unknown as Uuid;
       }
-      static Type: UuidType;
+      static Type: InternalThing;
   };
 }
