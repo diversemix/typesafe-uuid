@@ -1,5 +1,5 @@
 {
-  "name": "typesafe-uuid",
+  "name": "test-typesafe-uuid",
   "version": "1.0.1",
   "description": "Library to enable definition of different types of objects indexed by a uuid",
   "main": "dist/index.js",
@@ -36,9 +36,6 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@types/jest": "^24.0.18",
-    "@types/uuid": "^3.4.5",
-    "fp-ts": "^2.0.5",
-    "io-ts": "^2.0.1"
+    "typesafe-uuid": "^1.0.2"
   }
 }
